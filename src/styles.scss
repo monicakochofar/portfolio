@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  // general colours
+  --primary-color: #172026;
+  --secondary-color: #364958;
+  --tertiary-color: #C9E4CA;
+  --hover-color: #55828B;
+  // background colours
+  --header-bg-color: #364958;
+  --nav-bg-color: #172026;
+  --box-shadow-color: #000;
+  // button color scheme
+  --button-bg-color: #3B6064;
+  --button-border-color: #87BBA2;
+  --button-text-color: #C9E4CA;
+  --button-hover-bg-color: #55828B;
+  --button-hover-color: #000;
+  font-size: 16px;
+}
+
+button {
+  font-size: 16px;
+  padding: 4px 20px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--button-border-color);
+  &:hover {
+    background-color: var(--button-hover-bg-color);
+    color: var(--button-hover-color);
+    cursor: pointer;
+  }
+}
+
+.full-width {
+  width: 100%;
+  border: 1px solid black;
+}
