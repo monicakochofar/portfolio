@@ -2,15 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    NavigationComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule
@@ -18,13 +16,11 @@ import { AppComponent } from './app.component';
   providers: [],
   exports: [
     HeaderComponent,
-    FooterComponent,
-    NavigationComponent
+    FooterComponent
   ],
   entryComponents: [
     HeaderComponent,
-    FooterComponent,
-    NavigationComponent
+    FooterComponent
   ],
   bootstrap: [AppComponent]
 })
