@@ -1,0 +1,26 @@
+<nav class="nav container">
+  <a href="#" class="logo">Monica</a>
+  <div class="menu" [ngClass]="{'show-menu': showMenu}">
+    <ul class="list grid">
+
+      <li class="item" *ngFor="let navLink of navLinks">
+        <a class="link"
+          [fragment]="navLink.link"
+          [routerLink]=""
+          (click)="showMenu = false">
+          <i class="uil icon" [ngClass]="'uil-' + navLink.icon"></i> 
+          {{navLink.text}}
+        </a>
+      </li>
+
+    </ul>
+    <i class="uil uil-times close" (click)="showMenu = false"></i>
+  </div>
+
+  <div class="btns">
+    <div class="toggle" 
+      (click)="showMenu = !showMenu">
+      <i class="uil uil-apps"></i>
+    </div>
+  </div>
+</nav>
