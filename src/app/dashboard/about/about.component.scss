@@ -32,3 +32,27 @@
     justify-content: center;
   }
 }
+
+
+@media screen and (min-width: 768px) {
+  .about {
+    .about-container {
+      column-gap: 5rem;
+      .buttons {
+        justify-content: initial;
+      }
+    }
+  
+    .about-img {
+      width: 350px;
+    }
+  
+    .description {
+      text-align: initial;
+    }
+  
+    .info {
+      justify-content: space-between;
+    }
+  }
+}

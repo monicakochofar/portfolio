@@ -1,6 +1,17 @@
 
-<app-navigation></app-navigation>
+<app-navigation 
+  [navigationLinks]="navLinks"
+  (clickedLink)="clickedNavLink($event)">
+</app-navigation>
 <main>
   <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>
+
+<a class="scrollup" 
+  id="scroll-up"
+  (click)="scrollUpClicked()"
+  [fragment]="'home'"
+  [routerLink]="">
+  <i class="uil uil-arrow-up icon"></i>
+</a>

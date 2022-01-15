@@ -1,26 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
 
   showMenu = false;
-  navLinks = [
-    {link: 'home', text: 'Home', icon: 'estate'},
-    {link: 'about', text: 'About', icon: 'user'},
-    {link: 'skills', text: 'Skills', icon: 'file-alt'},
-    {link: 'services', text: 'Services', icon: 'briefcase-alt'},
-    {link: 'portfolio', text: 'Portfolio', icon: 'scenery'},
-    {link: 'contact', text: 'Contact', icon: 'message'}
-  ];
+  navLinks: any;
+
+  @Input('navigationLinks') set navigationLinks(value: any) {
+    this.navLinks = value;
+    // const currentlyActiveLink = this.navLinks.find(el => el.isActive === true);
+    // currentlyActiveLink && (currentlyActiveLink.isActive = false);
+    // this.navLinks[0].isActive = value;
+  }
+
+  @Output() clickedLink = new EventEmitter<string>();
   
   constructor() {}
 
-  ngOnInit() {
-
-
+  clickedNavLink(navLink: any) {
+    this.showMenu = false;
+    this.clickedLink.emit(navLink);
   }
+
+  // setCurrentlyActiveLinkFalse() {
+  //   const currentlyActiveLink = this.navLinks.find(el => el.isActive === true);
+  //   currentlyActiveLink && (currentlyActiveLink.isActive = false);
+  // }
 }

@@ -5,9 +5,10 @@
 
       <li class="item" *ngFor="let navLink of navLinks">
         <a class="link"
+          [ngClass]="{'active-link': navLink.isActive}"
           [fragment]="navLink.link"
           [routerLink]=""
-          (click)="showMenu = false">
+          (click)="clickedNavLink(navLink)">
           <i class="uil icon" [ngClass]="'uil-' + navLink.icon"></i> 
           {{navLink.text}}
         </a>
