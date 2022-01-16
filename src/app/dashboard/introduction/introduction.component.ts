@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -15,4 +15,16 @@ export class IntroductionComponent {
   
   constructor(private router: Router) {}
 
+
+  @ViewChild('homeElement', {static: false}) 
+  homeElement: ElementRef | undefined;
+
+  scrollDown() {
+    if (this.homeElement) {
+      this.homeElement.nativeElement.dispatchEvent(new CustomEvent('scrollDownEvent', {
+        bubbles: true,
+        detail: {}
+      }));
+    }
+  }
 }

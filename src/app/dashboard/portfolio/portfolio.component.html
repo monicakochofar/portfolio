@@ -1,0 +1,27 @@
+<section class="services section" id="services">
+  <h2 class="section-title">Services</h2>
+  <span class="section-subtitle">What I offer</span>
+
+  <div class="services-container container grid">
+    <!-- SERVICES 1 -->
+    <div class="content" *ngFor="let item of itemList">
+      <div class="square" (click)="item.isActive = true">
+        <div>
+          <i class="uil icon" [ngClass]="item.icon"></i>
+          <h3 class="title" [innerHTML]="item.title">Ui/Ux <br> Designer</h3>
+        </div>
+  
+        <span class="button button-flex button-small button-link services-button">
+          View more
+          <i class="uil uil-arrow-right button-icon"></i>
+        </span>
+      </div>
+
+      <app-portfolio-modal 
+        [modalData]="item"
+        (closeModalClicked)="closeModal($event)">
+      </app-portfolio-modal>
+    </div>
+
+  </div>
+</section>

@@ -48,4 +48,10 @@ export class AppComponent {
     this.setCurrentlyActiveLinkFalse();
     this.navLinks[0].isActive = true;
   }
+
+  clickedScrollDown(event: any) {
+    this.setCurrentlyActiveLinkFalse();
+    const aboutLink = this.navLinks.find(el => el.text === 'About');
+    aboutLink && (aboutLink.isActive = true);
+  }
 }

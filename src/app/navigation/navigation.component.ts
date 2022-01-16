@@ -30,7 +30,6 @@ export class NavigationComponent {
 
   setDarkLightTheme() {
     const themeButton = document.getElementById('theme-button');
-    console.log('themebutton', themeButton)
     const darkTheme = 'dark-theme';
     const iconTheme = 'uil-sun';
 

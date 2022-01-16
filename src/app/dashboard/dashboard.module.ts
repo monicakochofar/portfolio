@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { NgModule } from '@angular/core';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioModalComponent } from './portfolio/portfolio-modal/portfolio-modal.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { NgModule } from '@angular/core';
     DashboardComponent,
     QualificationComponent,
     TimelineComponent,
-    SkillsComponent
+    SkillsComponent,
+    PortfolioComponent,
+    PortfolioModalComponent
   ],
   imports: [
     RouterModule,
@@ -28,7 +32,9 @@ import { NgModule } from '@angular/core';
     DashboardComponent,
     QualificationComponent,
     TimelineComponent,
-    SkillsComponent
+    SkillsComponent,
+    PortfolioComponent,
+    PortfolioModalComponent
   ],
   entryComponents: [
     IntroductionComponent,
@@ -36,7 +42,9 @@ import { NgModule } from '@angular/core';
     DashboardComponent,
     QualificationComponent,
     TimelineComponent,
-    SkillsComponent
+    SkillsComponent,
+    PortfolioComponent,
+    PortfolioModalComponent
   ]
 })
 export class DashboardModule { }

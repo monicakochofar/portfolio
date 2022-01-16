@@ -1,4 +1,4 @@
-<section class="home section" id="home">
+<section class="home section" id="home" #homeElement>
   <div class="home-container container grid">
     <div class="home-content grid">
       <div class="home-social">
@@ -39,7 +39,8 @@
     </div>
     <div class="home-scroll">
       <a class="link button-flex"
-        href="#about">
+        href="#about"
+        (click)="scrollDown()">
         <i class="uil uil-mouse-alt mouse-icon"></i>
         <span class="name">Scroll down</span>
         <i class="uil uil-arrow-down arrow-icon"></i>
