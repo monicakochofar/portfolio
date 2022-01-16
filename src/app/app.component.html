@@ -1,8 +1,8 @@
 
-<app-navigation 
+<app-header 
   [navigationLinks]="navLinks"
   (clickedLink)="clickedNavLink($event)">
-</app-navigation>
+</app-header>
 <main (scrollDownEvent)="clickedScrollDown($event)">
   <router-outlet></router-outlet>
 </main>
