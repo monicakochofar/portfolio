@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,12 +11,12 @@ export class AppComponent {
   title = 'portfolio';
 
   navLinks = [
-    {link: 'home', text: 'Home', icon: 'estate', isActive: true},
-    {link: 'about', text: 'About', icon: 'user', isActive: false},
-    {link: 'skills', text: 'Skills', icon: 'file-alt', isActive: false},
-    {link: 'services', text: 'Services', icon: 'briefcase-alt', isActive: false},
-    {link: 'portfolio', text: 'Portfolio', icon: 'scenery', isActive: false},
-    {link: 'contact', text: 'Contact', icon: 'message', isActive: false}
+    {link: '#home', text: 'Home', icon: 'estate', isActive: true},
+    {link: '#about', text: 'About', icon: 'user', isActive: false},
+    {link: '#skills', text: 'Skills', icon: 'file-alt', isActive: false},
+    {link: '#services', text: 'Services', icon: 'briefcase-alt', isActive: false},
+    {link: '#portfolio', text: 'Portfolio', icon: 'scenery', isActive: false},
+    {link: '#contact', text: 'Contact', icon: 'message', isActive: false}
   ];
 
   @HostListener('window:scroll', ['$event'])
@@ -28,10 +30,10 @@ export class AppComponent {
     }
   }
 
-  constructor() {}
+  constructor(private location: Location) {
+  }
 
   clickedNavLink(navLink: any) {
-    console.log('event received', navLink)
     this.setCurrentlyActiveLinkFalse();
     navLink.isActive = true;
   }
@@ -42,6 +44,7 @@ export class AppComponent {
   }
 
   scrollUpClicked() {
+    window.location.hash = '';
     this.setCurrentlyActiveLinkFalse();
     this.navLinks[0].isActive = true;
   }
