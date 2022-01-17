@@ -86,3 +86,14 @@
     }
   }
 }
+
+@media screen and (min-width: 968px) {
+  .about {
+    .about-container {
+      .block {
+        height: 17rem;
+        max-height: 17rem;
+      }
+    }
+  }
+}
