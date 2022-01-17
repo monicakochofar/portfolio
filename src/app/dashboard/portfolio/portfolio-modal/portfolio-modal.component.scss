@@ -1,4 +1,4 @@
-.services-modal {
+.portfolio-modal {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,18 +17,19 @@
     visibility: unset;
     opacity: unset;
   }
-  .services-modal-content {
+  .portfolio-modal-content {
     position: relative;
     background-color: var(--container-color);
     padding: 1.5rem;
+    width: 75%;
     border-radius: .5rem;
   }
-  .services-modal-title {
+  .portfolio-modal-title {
     font-size: var(--h3-font-size);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-1-5);
   }
-  .services {
+  .portfolio {
     row-gap: 1rem;
     .service {
       display: flex;
@@ -42,7 +43,7 @@
     color: var(--first-color);
     cursor: pointer;
   }
-  .services-modal-icon {
+  .portfolio-modal-icon {
     color: var(--first-color-alt);
     margin-right: var(--mb-0-25);
   }

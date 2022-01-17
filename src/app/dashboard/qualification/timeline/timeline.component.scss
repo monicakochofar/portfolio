@@ -30,3 +30,30 @@
     color: var(--text-color-light);
   }
 }
+
+@media screen and (min-width: 768px) {
+  .timeline {
+    .linecircle {
+      &:hover {
+        transform: unset;
+        transition: .3s;
+      }
+    }
+    &.top {
+      .details {
+        transition: .3s;
+        transform: translateX(150px);
+      }
+    }
+    &.bottom{
+      .details {
+        transition: .3s;
+        transform: translateX(-150px);
+      }
+    }
+    .details {
+      transform: unset;
+      transition: .3s;
+    }
+  }
+}

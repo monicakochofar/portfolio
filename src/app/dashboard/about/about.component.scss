@@ -5,39 +5,89 @@
     justify-self: center;
     align-self: center;
   }
+  .about-container {
+    display: flex;
+    .block {
+      display: none;
+    }
+  }
   .description {
-    text-align: center;
+    //text-align: center;
     margin-bottom: var(--mb-2-5);
-  }
-  .info {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom:var(--mb-2-5);
-    .title {
-      font-size: var(--h2-font-size);
-      font-weight: var(--font-semi-bold);
-      color: var(--title-color);
+    .text {
+      &:not(:first-child) {
+        padding-top: 2rem;
+      }
     }
-    .name {
-      font-size: var(--smaller-font-size);
+    strong {
+      color: var(--first-color);
     }
-    .title,
-    .name {
-      display: block;
-      text-align: center;
+    .light-text {
+      color: var(--first-color-alt);
     }
   }
-  .buttons {
-    display: flex;
-    justify-content: center;
+  .technologies {
+    .technologies-description { 
+      padding-bottom: .5rem;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(150px,10px));
+    }
+    li {
+      display: flex;
+      align-items: center;
+      font-size: var(--small-font-size);
+      cursor: default;
+      transition: 1s;
+      opacity: unset;
+      &.about-hidden {
+        opacity: 0;
+        transition: 1s
+      }
+      &:hover{
+        animation: shake .5s;
+        animation-iteration-count: infinite;
+      }
+    }
+    .icon {
+      font-size: 1.5rem;
+      color: var(--first-color);
+    }
   }
 }
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 
 
 @media screen and (min-width: 768px) {
   .about {
     .about-container {
-      column-gap: 5rem;
+      column-gap: 3rem;
+      .block {
+        display: block;
+        background-color: var(--first-color);
+        height: 15rem;
+        width: 8rem;
+        max-height: 15rem;
+        transition: max-height 1s ease-in;
+        &.block-hidden {
+          max-height: 0;
+        }
+      }
       .buttons {
         justify-content: initial;
       }
@@ -49,10 +99,6 @@
   
     .description {
       text-align: initial;
-    }
-  
-    .info {
-      justify-content: space-between;
     }
   }
 }

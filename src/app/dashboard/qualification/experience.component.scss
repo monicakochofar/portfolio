@@ -1,4 +1,4 @@
-.qualification-container {
+.experience-container {
   [data-content] {
     display: none;
     &.active {
@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-evenly;
     margin-bottom: var(--mb-2);
-    .qualification-button {
+    .experience-button {
       font-size: var(--h3-font-size);
       font-weight: var(--font-medium);
       cursor: pointer;
@@ -62,11 +62,11 @@
 }
 
 @media screen and (min-width: 768px) {
-  .qualification {
+  .experience {
     .tabs {
       justify-content: center;
     }
-    .qualification-button {
+    .experience-button {
       margin: 0 var(--mb-1);
     }
     .sections {
@@ -76,7 +76,7 @@
 }
 
 @media screen and (min-width: 568px) {
-  .qualification {
+  .experience {
     .sections {
       display: grid;
       grid-template-columns: .6fr;

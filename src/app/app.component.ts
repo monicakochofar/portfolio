@@ -1,3 +1,4 @@
+import { ScrollListenersService } from './scroll-listeners.service';
 import { Location } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -11,26 +12,34 @@ export class AppComponent {
   title = 'portfolio';
 
   navLinks = [
-    {link: '#home', text: 'Home', icon: 'estate', isActive: true},
+    {link: '#home', text: 'Home', icon: 'home', isActive: true},
     {link: '#about', text: 'About', icon: 'user', isActive: false},
-    {link: '#skills', text: 'Skills', icon: 'file-alt', isActive: false},
-    {link: '#services', text: 'Services', icon: 'briefcase-alt', isActive: false},
     {link: '#portfolio', text: 'Portfolio', icon: 'scenery', isActive: false},
-    {link: '#contact', text: 'Contact', icon: 'message', isActive: false}
+    {link: '#experience', text: 'Experience', icon: 'briefcase-alt', isActive: false}
+    // {link: '#contact', text: 'Contact', icon: 'message', isActive: false}
   ];
 
+  // navLinks = [
+  //   {link: '#home', text: 'Home', icon: 'home', isActive: true},
+  //   {link: '#services', text: 'Services', icon: 'briefcase-alt', isActive: false},
+  //   {link: '#about', text: 'About', icon: 'user', isActive: false},
+  //   {link: '#skills', text: 'Skills', icon: 'file-alt', isActive: false},
+  //   {link: '#portfolio', text: 'Portfolio', icon: 'scenery', isActive: false},
+  //   {link: '#contact', text: 'Contact', icon: 'message', isActive: false}
+  // ];
+
   @HostListener('window:scroll', ['$event'])
-  scrollUp() {
-    const scrollUp = document.getElementById('scroll-up');
+  scrollListener() {
     const scrollY = window.scrollY;
-    if (scrollY >= 560) {
-      scrollUp?.classList.add('show-scroll');
-    } else {
-      scrollUp?.classList.remove('show-scroll');
-    }
+    const windowHeight = window.innerHeight;
+    const elementVisible = 20;
+    this.scrollService.scrollUp(scrollY);
+    this.scrollService.aboutAnimScroll(windowHeight, elementVisible);
+    this.scrollService.portAnimScroll(windowHeight, elementVisible);
+    this.scrollService.experienceScroll(windowHeight, elementVisible);
   }
 
-  constructor(private location: Location) {
+  constructor(private scrollService: ScrollListenersService) {
   }
 
   clickedNavLink(navLink: any) {
@@ -54,4 +63,5 @@ export class AppComponent {
     const aboutLink = this.navLinks.find(el => el.text === 'About');
     aboutLink && (aboutLink.isActive = true);
   }
+
 }

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,8 +11,9 @@ export class PortfolioComponent {
     { 
       isActive: false,
       icon: 'uil-web-grid',
-      title: 'Ui/Ux <br> Designer',
-      services: [
+      title1: 'Ui/Ux',
+      title2: 'Designer',
+      portfolio: [
         'I develop the user interface.',
         'Web page development.',
         'I create ux element interactions.',
@@ -22,8 +22,9 @@ export class PortfolioComponent {
     { 
       isActive: false,
       icon: 'uil-arrow',
-      title: 'Frontend <br> Developer',
-      services: [
+      title1: 'Frontend',
+      title2: 'Developer',
+      portfolio: [
         'I develop the user interface.',
         'Web page development.',
         'I create ux element interactions.',
@@ -32,8 +33,9 @@ export class PortfolioComponent {
     { 
       isActive: false,
       icon: 'uil-pen',
-      title: 'Branding <br> Designer',
-      services: [
+      title1: 'Branding',
+      title2: 'Designer',
+      portfolio: [
         'I develop the user interface.',
         'Web page development.',
         'I create ux element interactions.',
@@ -44,7 +46,7 @@ export class PortfolioComponent {
   constructor() {}
 
   closeModal(event:any) {
-    const item = this.itemList.find(el => el.title === event.title);
+    const item = this.itemList.find(el => el.title1 === event.title1);
     item && (item.isActive = false);
   }
 

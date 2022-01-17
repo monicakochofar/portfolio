@@ -33,6 +33,7 @@ header {
       cursor: pointer;
       &:hover {
         color: var(--first-color);
+        transition: color .3s;
       }
     }
   }
@@ -70,6 +71,7 @@ header {
     font-weight: var(--font-medium);
     &:hover {
       color: var(--first-color);
+      transition: color .3s;
     }
     &.active-link {
       color: var(--first-color);
@@ -118,6 +120,22 @@ header {
   //     padding-left: 4px;
   //   }
   // }
+  header {
+    background-color: var(--first-color);
+    .nav {
+      .logo {
+        color: #FFF;
+      }
+      .btns .change-theme {
+        color: #FFF;
+      }
+      .toggle {
+        color: #FFF;
+      }
+
+    }
+    
+  }
   .menu {
     position: fixed;
     bottom: -100%;

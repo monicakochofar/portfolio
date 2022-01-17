@@ -1,13 +1,15 @@
-<div class="services-modal" [ngClass]="{'active-modal': data.isActive}">
-  <div class="services-modal-content">
-    <h4 class="services-modal-title" [innerHTML]="data.title"></h4>
-    <i class="uil uil-times close" (click)="closeModal()"></i>
-
-    <ul class="services grid">
-      <li class="service" *ngFor="let service of data.services">
-        <i class="uil uil-check-circle services-modal-icon"></i>
-        <p>{{ service }}</p>
-      </li>
-    </ul>
+<ng-container *ngIf="data">
+  <div class="portfolio-modal" [ngClass]="{'active-modal': data.isActive}">
+    <div class="portfolio-modal-content">
+      <h4 class="portfolio-modal-title">{{ data.title1 }}  {{ data.title2 }}</h4>
+      <i class="uil uil-times close" (click)="closeModal()"></i>
+  
+      <ul class="portfolio grid">
+        <li class="service" *ngFor="let item of data.portfolio">
+          <i class="uil uil-check-circle portfolio-modal-icon"></i>
+          <p>{{ item }}</p>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</ng-container>

@@ -6,7 +6,7 @@
 <main (scrollDownEvent)="clickedScrollDown($event)">
   <router-outlet></router-outlet>
 </main>
-<app-footer></app-footer>
+<app-footer [navigationLinks]="navLinks"></app-footer>
 
 <a class="scrollup" 
   id="scroll-up"

@@ -6,14 +6,11 @@
         <span class="subtitle">Frontend developer</span>
       </div>
       <ul class="links">
+        <!-- <li *ngFor="let navLink of navigationLinks">
+          <a href="{{navLink.link}}" class="link">{{navLink.text}}</a>
+        </li> -->
         <li>
-          <a href="#services" class="link">Services</a>
-        </li>
-        <li>
-          <a href="#portfolio" class="link">Portfolio</a>
-        </li>
-        <li>
-          <a href="#contact" class="link">Contactme</a>
+          <a href="#home" (click)="clickedContactMe()" class="link">Contact</a>
         </li>
       </ul>
       <!-- <div class="socials">
@@ -22,6 +19,6 @@
         <a href="" class="social"></a>
       </div> -->
     </div>
-    <p class="copy">&#169; Bedimcode. All rights reserved.</p>
+    <p class="copy">&#169; MonicaKochofar. All rights reserved.</p>
   </div>
 </footer>

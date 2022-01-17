@@ -176,6 +176,8 @@ img {
   font-weight: var(--font-medium);
   &:hover {
     background-color: var(--first-color-alt);
+    //opacity: .5;se
+    transition: .5s;
   }
   .message-icon {
     font-size: 1.25rem;
@@ -226,39 +228,6 @@ img {
 }
 
 
-/*==================== SKILLS ====================*/
-
-
-/*==================== QUALIFICATION ====================*/
-
-
-/*==================== SERVICES ====================*/
-
-
-/* Active Modal */
-
-
-/*==================== PORTFOLIO ====================*/
-
-
-/*==================== PROJECT IN MIND ====================*/
-
-
-/*==================== TESTIMONIAL ====================*/
-
-
-/*==================== CONTACT ME ====================*/
-
-
-/*==================== FOOTER ====================*/
-
-
-/*========== SCROLL UP ==========*/
-
-
-/* Show scroll */
-
-
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {
   width: .60rem;
@@ -286,9 +255,13 @@ img {
 
 /* For medium devices */
 @media screen and (min-width: 568px) {
-  .about-container,
+  // .about-container,
   .skills-container {
     grid-template-columns: repeat(2,1fr);
+  }
+  .about-container {
+    margin-left: var(--mb-2-5);
+    margin-right: var(--mb-1-5);
   }
 }
 
@@ -304,13 +277,14 @@ img {
   }
 
   .section {
-    padding: 6rem 0 2rem;
+    //padding: 6rem 0 2rem;
+    padding: 6rem 0 12rem;
     &.home {
       padding: 10rem 0 12rem;
     }
   }
   .section-subtitle {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
   .header {
     top: 0;
