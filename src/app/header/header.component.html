@@ -6,6 +6,7 @@
   
         <li class="item" *ngFor="let navLink of navLinks">
           <a class="link"
+            attr.aria-label="{{ navLink.text }}"
             [ngClass]="{'active-link': navLink.isActive}"
             href="{{navLink.link}}"
             (click)="clickedNavLink(navLink)">
@@ -16,6 +17,7 @@
         <li>
           <a class="link"
             href="#home"
+            aria-label="Contact me"
             (click)="clickedContactMe()">
             <i class="uil uil-message icon"></i> 
             Contact

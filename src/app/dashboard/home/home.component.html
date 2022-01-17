@@ -2,10 +2,14 @@
   <div class="home-container container grid">
     <div class="home-content grid">
       <div class="home-social">
-        <a href="{{socialURL.linkedIN}}" target="_blank" class="icon">
+        <a href="{{socialURL.linkedIN}}" target="_blank" class="icon"
+          aria-label="Linkedin"
+          rel="noreferrer">
           <i class="uil uil-linkedin-alt"></i>
         </a>
-        <a href="{{socialURL.gitHub}}" target="_blank" class="icon">
+        <a href="{{socialURL.gitHub}}" target="_blank" class="icon"
+          aria-label="Github"
+          rel="noreferrer">
           <i class="uil uil-github-alt"></i>
         </a>
       </div>
@@ -30,9 +34,10 @@
       </div>
       <div class="home-data">
         <h1>Hi, I'm Monica</h1>
-        <h3 class="home-subtitle">Frontend Developer</h3>
+        <h2 class="home-subtitle">Frontend Developer</h2>
         <p class="home-description">High level experience in web design and development knowledge, producing quality work.</p>
         <a class="button button-flex contact-me-button" id="contact-me" tabindex="0"
+          aria-label="Contact me"
           (click)="contactMeClicked()">
           Say Hello <i class="uil uil-message message-icon"></i>
         </a>
@@ -40,6 +45,7 @@
     </div>
     <div class="home-scroll">
       <a class="link button-flex"
+        aria-label="Scroll down to About Me"
         href="#about"
         (click)="scrollDown()">
         <i class="uil uil-mouse-alt mouse-icon"></i>

@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --live-reload=true --port=4200",
+    "stop": "kill-port 4200",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "watch": "build --watch --configuration development",
+    "test": "ng test",
+    "explore": "source-map-explorer dist/**/*.js"
   },
   "private": true,
   "dependencies": {
@@ -18,8 +20,9 @@
     "@angular/platform-browser": "~12.1.0-",
     "@angular/platform-browser-dynamic": "~12.1.0-",
     "@angular/router": "~12.1.0-",
+    "kill-port": "^1.6.1",
     "rxjs": "~6.6.0",
-    "tslib": "^2.2.0",
+    "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
