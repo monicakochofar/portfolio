@@ -11,6 +11,7 @@
     opacity: unset;
     cursor: default;
     &:active {
+      .icon-external,
       .icon-git {
         transition: .3s;
         transform: scale(1.5);
@@ -20,12 +21,19 @@
       opacity: 0;
       transition: 1s;
     }
+    .action-icons {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      .icon-external {
+        //display: none; //TBD: update as needed
+        padding-left: 4px;
+      }
+    }
+    .icon-external,
     .icon-git {
       font-size: 1.5rem;
       color: var(--first-color);
-      position: absolute;
-      right: 1.5rem;
-      top: 1rem;
       &.shake {
         animation: shake .5s;
         animation-iteration-count: 1;
@@ -85,6 +93,7 @@
 
 @media screen and (max-width: 350px) {
   .portfolio-container .portfolio-content {
+    .icon-external,
     .icon-git {
       animation: unset;
       &.shake {
