@@ -23,7 +23,7 @@ export class DashboardComponent {
     { 
       title: 'Front-End Developer', 
       location: 'Rogers Communications', 
-      years: 'Sep 2019 - Present', 
+      years: 'Sep 2019 - Oct 2021', 
       decoration: { position: 'bottom',hasCircle: true, hasLine: true }
     },
     { 
