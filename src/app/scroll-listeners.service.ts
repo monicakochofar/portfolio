@@ -75,6 +75,7 @@ export class ScrollListenersService {
       }, timeout);
       timeout += 400;
     }
+    // TODO: shake 
     setTimeout(() => {
       const gitHubElements = document.getElementsByClassName('icon-git');
       if (gitHubElements) {

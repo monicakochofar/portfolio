@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve --live-reload=true --port=4200",
     "stop": "kill-port 4200",
-    "build": "ng build --configuration production --source-map --aot --vendor-chunk --common-chunk --delete-output-path --build-optimizer",
+    "build": "ng build",
     "watch": "build --watch --configuration development",
     "test": "ng test",
     "explore": "source-map-explorer dist/**/*.js"
