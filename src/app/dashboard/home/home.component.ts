@@ -12,8 +12,8 @@ export class HomeComponent {
   homeElement: ElementRef | undefined;
   
   socialURL = {
-    linkedIN: 'https://www.linkedin.com/',
-    gitHub: 'https://www.github.com/'
+    linkedIN: 'https://www.linkedin.com/in/monicakochofar/',
+    gitHub: 'https://github.com/monicakochofar'
   }
   
   constructor(private router: Router) {}
@@ -35,5 +35,9 @@ export class HomeComponent {
   ngAfterViewInit() {
     const mainImage = document.getElementById("main-img");
     mainImage && mainImage.setAttribute('href', 'assets/img/robot-preview.png');
+  }
+
+  contactMeClicked() {
+    window.location.href = "mailto:monicakochofar@gmail.com";
   }
 }

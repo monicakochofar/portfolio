@@ -57,3 +57,29 @@
     }
   }
 }
+
+@media screen and (max-width: 330px) {
+  .timeline {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    grid-template-columns: unset;
+    column-gap: unset;
+    .linecircle {
+      display: none;
+    }
+    .details {
+      margin-bottom: 2rem;
+      padding: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,.15);
+      border-radius: 0.5rem;
+      background-color: #FFF;
+      width: 100%;
+      &:hover {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+        transform: translateY(-7px);
+        transition: 1s;
+      }
+    }
+  }
+}

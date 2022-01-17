@@ -32,9 +32,8 @@
         <h1>Hi, I'm Monica</h1>
         <h3 class="home-subtitle">Frontend Developer</h3>
         <p class="home-description">High level experience in web design and development knowledge, producing quality work.</p>
-        <a class="button button-flex contact-me-button" id="contact-me" 
-          [fragment]="'contact'"
-          [routerLink]="">
+        <a class="button button-flex contact-me-button" id="contact-me"
+          (click)="contactMeClicked()">
           Say Hello <i class="uil uil-message message-icon"></i>
         </a>
       </div>

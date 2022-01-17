@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppComponent } from './app.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -24,11 +26,13 @@ import { AppComponent } from './app.component';
   providers: [ScrollListenersService],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorComponent
   ],
   entryComponents: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorComponent
   ],
   bootstrap: [AppComponent]
 })
