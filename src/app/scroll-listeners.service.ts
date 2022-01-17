@@ -15,11 +15,11 @@ export class ScrollListenersService {
 
   // SSCROLL UP BUTTON ---
   scrollUp(scrollY: any) {
-    const scrollUp = document.getElementById('scroll-up');
-    if (scrollY >= 560) {
-      scrollUp?.classList.add('show-scroll');
-    } else {
-      scrollUp?.classList.remove('show-scroll');
+    const scrollUpElement = document.getElementById('scroll-up');
+    if (scrollY >= 560 && scrollUpElement) {
+      scrollUpElement.classList.add('show-scroll');
+    } else if (scrollUpElement && scrollUpElement.classList.contains('show-scroll')){
+      scrollUpElement.classList.remove('show-scroll');
     }
   }
 
