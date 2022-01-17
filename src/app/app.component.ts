@@ -41,7 +41,7 @@ export class AppComponent {
     this.scrollService.portAnimScroll(!!isPortfolioPage);
     
 
-    const isExperiencePage = this.isPage(windowHeight, elementVisible, 'experience');
+    const isExperiencePage = this.isPage(windowHeight, elementVisible, 'work');
     this.scrollService.experienceScroll(!!isExperiencePage);
     
   }
