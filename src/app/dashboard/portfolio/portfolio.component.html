@@ -1,0 +1,34 @@
+<section class="portfolio section" id="portfolio">
+  <h2 class="section-title">Portfolio</h2>
+  <span class="section-subtitle">Software creations</span>
+
+  <div class="portfolio-container container grid" id="portfolio-cont-grid">
+    <!-- SERVICES 1 -->
+    <div class="portfolio-content portfolio-hidden" *ngFor="let item of itemList">
+      <i class="uil uil-github icon-git"></i>
+      <div class="square">
+      <!-- <div class="square" (click)="item.isActive = true"> -->
+        <div>
+          <i class="uil uil-folder icon"></i>
+          <!-- <i class="uil icon" [ngClass]="item.icon"></i> -->
+          <h3 class="title">
+            {{ item.title1 }} <br> {{ item.title2 }}
+          </h3>
+          <span> an application created for xyz </span>
+          <div class="languages">Javascript</div>
+        </div>
+  
+        <!-- <span class="button button-flex button-small button-link portfolio-button">
+          View more
+          <i class="uil uil-arrow-right button-icon"></i>
+        </span> -->
+      </div>
+
+      <!-- <app-portfolio-modal 
+        [modalData]="item"
+        (closeModalClicked)="closeModal($event)">
+      </app-portfolio-modal> -->
+    </div>
+
+  </div>
+</section>
