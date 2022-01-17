@@ -22,7 +22,7 @@ export class PortfolioComponent {
     { 
       isActive: false,
       icon: 'uil-arrow',
-      title1: 'Frontend',
+      title1: 'Front-End',
       title2: 'Developer',
       portfolio: [
         'I develop the user interface.',
