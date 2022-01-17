@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-error',
@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
     <section class="error section" id="error">
       <h2 class="section-title">Beep Boop</h2>
       <span class="section-subtitle">
-        Error: We're trying to compute how you landed on this page.
-        Try executing the back button.
+        <strong>Error:</strong> 
+        Sorry, we're still trying to compute how you landed on this page.
+        <br>Try executing the back button or clicking "Home".
       </span>
 
       <div class="error-container container">
@@ -16,9 +17,33 @@ import { Component } from '@angular/core';
       </div>
     </section>
   `,
-  styles: ['.error-container { display: flex; justify-content: center; }'],
+  styles: [
+    `
+    .error-container { 
+      display: flex; 
+      justify-content: center;
+    }
+    .section-title {
+      margin-bottom: var(--mb-1-5);
+    }
+    .section-title, 
+    strong {
+      color:var(--first-color);
+    }
+    `
+  ],
 })
-export class ErrorComponent {
+export class ErrorComponent implements OnInit{
 
+  constructor() {}
+
+  ngOnInit() {
+    const activeLinkElements = document.getElementsByClassName('active-link');
+    const length = activeLinkElements.length;
+    for (let i=0; i<length; i++) {
+      const element = activeLinkElements[i];
+      element.classList.remove('active-link');
+    }
+  }
 
 }
