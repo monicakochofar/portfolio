@@ -1,7 +1,5 @@
 import { ScrollListenersService } from './scroll-listeners.service';
-import { Location } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -34,12 +32,27 @@ export class AppComponent {
     const windowHeight = window.innerHeight;
     const elementVisible = 20;
     this.scrollService.scrollUp(scrollY);
-    this.scrollService.aboutAnimScroll(windowHeight, elementVisible);
-    this.scrollService.portAnimScroll(windowHeight, elementVisible);
-    this.scrollService.experienceScroll(windowHeight, elementVisible);
+
+    const isAboutPage = this.isPage(windowHeight, elementVisible, 'about');
+    this.scrollService.aboutAnimScroll(!!isAboutPage);
+    
+
+    const isPortfolioPage = this.isPage(windowHeight, elementVisible, 'portfolio-cont-grid')
+    this.scrollService.portAnimScroll(!!isPortfolioPage);
+    
+
+    const isExperiencePage = this.isPage(windowHeight, elementVisible, 'experience');
+    this.scrollService.experienceScroll(!!isExperiencePage);
+    
   }
 
-  constructor(private scrollService: ScrollListenersService) {
+  constructor(private scrollService: ScrollListenersService) {}
+
+  isPage(windowHeight: any, elementVisible:any, elementID:string) {
+    const workElement = document.getElementById(elementID);
+    const elementTop = workElement?.getBoundingClientRect().top;
+    console.log('elementTop', elementTop, windowHeight, elementVisible, workElement)
+    return elementTop && (elementTop < windowHeight - elementVisible);
   }
 
   clickedNavLink(navLink: any) {

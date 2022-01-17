@@ -38,6 +38,6 @@ export class HomeComponent {
   }
 
   contactMeClicked() {
-    window.location.href = "mailto:monicakochofar@gmail.com";
+    window.location.href = "mailto:mokdev123@gmail.com";
   }
 }

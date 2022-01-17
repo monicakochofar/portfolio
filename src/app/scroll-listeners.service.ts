@@ -25,11 +25,8 @@ export class ScrollListenersService {
 
   // ABOUT page ---
 
-  aboutAnimScroll(windowHeight:any, elementVisible:any) {
-    const workElement = document.getElementById('about');
-    const elementTop = workElement?.getBoundingClientRect().top;
-    if (elementTop && (elementTop < windowHeight - elementVisible)
-      && this.timesRanMap.about === 0) {
+  aboutAnimScroll(isAboutPage: boolean) {
+    if (isAboutPage && this.timesRanMap.about === 0) {
       this.delayedAnimationAbout();
       this.timesRanMap.about = 1;
     }
@@ -54,11 +51,8 @@ export class ScrollListenersService {
 
   // PORTFOLIO page ---
 
-  portAnimScroll(windowHeight:any, elementVisible:any) {
-    const workElement = document.getElementById('portfolio-cont-grid');
-    const elementTop = workElement?.getBoundingClientRect().top;
-    if (elementTop && (elementTop < windowHeight - elementVisible) 
-      && this.timesRanMap.portfolio === 0) {
+  portAnimScroll(isPortfolioPage: boolean) {
+    if( isPortfolioPage && this.timesRanMap.portfolio === 0) {
       this.delayedAnimationPort();
       this.timesRanMap.portfolio = 1;
     }
@@ -91,11 +85,8 @@ export class ScrollListenersService {
 
   // EXPERIENCE PAGE (timeline) ---
 
-  experienceScroll(windowHeight:any, elementVisible:any) {
-    const workElement = document.getElementById('experience');
-    const elementTop = workElement?.getBoundingClientRect().top;
-    if (elementTop && (elementTop < windowHeight - elementVisible) 
-      && this.timesRanMap.exp === 0) {
+  experienceScroll(isExperiencePage: boolean) {
+    if (isExperiencePage && this.timesRanMap.exp === 0) {
       this.delayedAnimationExp();
       this.timesRanMap.exp = 1;
     }
@@ -104,7 +95,7 @@ export class ScrollListenersService {
   delayedAnimationExp() {
     const workElements = document.getElementsByClassName('timeline');
     const length = workElements.length;
-    let timeout = 100;
+    let timeout = 400;
     for (let i=0; i<length; i++) {
       setTimeout(() => {
         const element = workElements[i];
