@@ -37,4 +37,12 @@ export class TimelineComponent implements OnInit {
     return itemList;
   }
 
+  isOdd(index) {
+    return index % 2; // 0 is falsy, so if its even this will return false because its 0
+  }
+
+  isEven(index) {
+    return (index % 2) === 0;
+  }
+
 }

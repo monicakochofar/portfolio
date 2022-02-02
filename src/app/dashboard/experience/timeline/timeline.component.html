@@ -1,6 +1,6 @@
 <div class="timeline data" *ngFor="let item of itemList; let i = index">
 
-  <ng-container *ngIf="(i % 2) === 0">
+  <ng-container *ngIf="isEven(i)">
     <div></div>
     <div class="linecircle">
       <span class="rounder"></span>
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <ng-container *ngIf="(i % 2) !== 0">
+  <ng-container *ngIf="isOdd(i)">
     <div class="linecircle">
       <span class="rounder"></span>
       <span class="line" *ngIf="item.hasLine"></span>
