@@ -1,27 +1,27 @@
-<div class="timeline data" *ngFor="let item of itemList; let i = index">
+<ng-container *ngFor="let item of itemList; let i = index">
+  <div class="timeline data" [ngClass]="{'top':isEven(i),'bottom':isOdd(i)}">
 
-  <ng-container *ngIf="isEven(i)">
-    <div></div>
-    <div class="linecircle">
+    <ng-container *ngIf="isEven(i)">
+      <div></div>
+      <div class="linecircle">
+        <span class="rounder"></span>
+        <span class="line" *ngIf="item.hasLine"></span>
+      </div>
+    </ng-container>
+  
+    <div class="details">
+      <h3 class="title" [innerHTML]="item.title"></h3>
+      <span class="subtitle">{{ item.location }}</span>
+      <div class="calendar">
+        <i class="uil uil-calendar-alt"></i>
+        {{ item.years }}
+      </div>
+    </div>
+  
+    <div class="linecircle" *ngIf="isOdd(i)">
       <span class="rounder"></span>
       <span class="line" *ngIf="item.hasLine"></span>
     </div>
-  </ng-container>
-
-  <div class="details">
-    <h3 class="title" [innerHTML]="item.title"></h3>
-    <span class="subtitle">{{ item.location }}</span>
-    <div class="calendar">
-      <i class="uil uil-calendar-alt"></i>
-      {{ item.years }}
-    </div>
+  
   </div>
-
-  <ng-container *ngIf="isOdd(i)">
-    <div class="linecircle">
-      <span class="rounder"></span>
-      <span class="line" *ngIf="item.hasLine"></span>
-    </div>
-  </ng-container>
-
-</div>
+</ng-container>
