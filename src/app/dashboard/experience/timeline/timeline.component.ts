@@ -1,4 +1,3 @@
-import { UserDataService } from './../../user-data.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +9,7 @@ export class TimelineComponent implements OnInit {
 
   @Input() itemList: any;
   
-  constructor(private userData: UserDataService) {}
+  constructor() {}
 
   ngOnInit() {
     const locationGroupList = this.groupSameLocation(this.itemList);
