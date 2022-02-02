@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { UserDataService } from './../user-data.service';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +10,13 @@ export class HomeComponent {
 
   @ViewChild('homeElement', {static: false}) 
   homeElement: ElementRef | undefined;
-  
+
   socialURL = {
-    linkedIN: 'https://www.linkedin.com/in/monicakochofar/',
-    gitHub: 'https://github.com/monicakochofar'
-  }
+    linkedIN: this.userData.LINKEDIN_URL,
+    gitHub: this.userData.GITHUB_URL
+  };
   
-  constructor(private router: Router) {}
+  constructor(private userData: UserDataService) {}
 
   scrollDown() {
     if (this.homeElement) {
@@ -38,6 +38,6 @@ export class HomeComponent {
   }
 
   contactMeClicked() {
-    window.location.href = "mailto:mokdev123@gmail.com";
+    window.location.href = `mailto:${this.userData.getContactMail()}`;
   }
 }

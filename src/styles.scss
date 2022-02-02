@@ -227,6 +227,19 @@ img {
   }
 }
 
+.animate-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.animate-section {
+  transform: translateY(10vh);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .6s ease-in, transform 1s ease-out;
+}
+
 
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {

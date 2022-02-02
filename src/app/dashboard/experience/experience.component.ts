@@ -1,3 +1,4 @@
+import { UserDataService } from '../user-data.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,18 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./experience.component.scss']
 })
 
-export class ExperienceComponent implements OnInit {
+export class ExperienceComponent {
 
   @Input() showTabs = true;
-  @Input() workItemList: any;
-  @Input() educationItemList: any;
+  @Input() workItemList = this.userData.getWorkExperience();
 
   currentTab = 'work';
 
-  constructor() {}
+  constructor(private userData: UserDataService) {}
 
-  ngOnInit() {
-
-
-  }
 }

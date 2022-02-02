@@ -2,8 +2,51 @@ import { ScrollListenersService } from './scroll-listeners.service';
 import { Component, HostListener } from '@angular/core';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <app-header 
+      [navigationLinks]="navLinks"
+      (clickedLink)="clickedNavLink($event)">
+    </app-header>
+    <main (scrollDownEvent)="clickedScrollDown($event)">
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer [navigationLinks]="navLinks"></app-footer>
+
+    <a class="scrollup"
+      aria-label="Scroll to top"
+      id="scroll-up"
+      (click)="scrollUpClicked()"
+      href="#home">
+      <i class="uil uil-arrow-up icon"></i>
+    </a>
+  `,
+  styles: [
+    `
+      .scrollup {
+        position: fixed;
+        right: 1rem;
+        bottom: -20%;
+        background-color: var(--first-color-alt);
+        opacity: .8;
+        padding: 0.3rem 0.3rem 0 0.3rem;
+        border-radius: .4rem;
+        z-index: var(--z-tooltip);
+        transition: .4s;
+      }
+      .icon {
+        font-size: 1.5rem;
+        color: #FFF;
+      }
+
+      .scrollup:hover {
+        background-color: var(--first-color-lighter);
+      }
+      
+      .show-scroll {
+        bottom: 5rem;
+      }
+    `
+  ],
 })
 export class AppComponent {
 
@@ -51,7 +94,6 @@ export class AppComponent {
   isPage(windowHeight: any, elementVisible:any, elementID:string) {
     const workElement = document.getElementById(elementID);
     const elementTop = workElement?.getBoundingClientRect().top;
-    console.log('elementTop', elementTop, windowHeight, elementVisible, workElement)
     return elementTop && (elementTop < windowHeight - elementVisible);
   }
 

@@ -1,0 +1,27 @@
+<div class="timeline data" *ngFor="let item of itemList; let i = index">
+
+  <ng-container *ngIf="(i % 2) === 0">
+    <div></div>
+    <div class="linecircle">
+      <span class="rounder"></span>
+      <span class="line" *ngIf="item.hasLine"></span>
+    </div>
+  </ng-container>
+
+  <div class="details">
+    <h3 class="title" [innerHTML]="item.title"></h3>
+    <span class="subtitle">{{ item.location }}</span>
+    <div class="calendar">
+      <i class="uil uil-calendar-alt"></i>
+      {{ item.years }}
+    </div>
+  </div>
+
+  <ng-container *ngIf="(i % 2) !== 0">
+    <div class="linecircle">
+      <span class="rounder"></span>
+      <span class="line" *ngIf="item.hasLine"></span>
+    </div>
+  </ng-container>
+
+</div>

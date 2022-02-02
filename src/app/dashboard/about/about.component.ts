@@ -7,11 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
-  socialURL = {
-    linkedIN: 'https://www.linkedin.com/',
-    gitHub: 'https://www.github.com/'
-  }
-
   constructor() {}
 
 }
