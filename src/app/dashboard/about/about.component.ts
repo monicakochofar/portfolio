@@ -1,3 +1,4 @@
+import { UserDataService } from './../user-data.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
-  constructor() {}
+  technologies = this.userData.getAboutTechnologies();
+  description = this.userData.getAboutDesc();
+
+  constructor(private userData: UserDataService) {}
 
 }

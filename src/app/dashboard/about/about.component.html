@@ -5,45 +5,15 @@
   <div class="about-container container">
     <div class="block block-hidden" id="about-block"></div>
     <div class="about-data">
-      <div class="description">
-        <div class="text">
-          I am currently working at <strong>Rogers Communications</strong> as a 
-          full time Front-End Developer, with a focus on 
-          <span class="light-text">Angular</span> in particular. 
-          My work projects surround a high-impact web application, 
-          which is used regularly by over 7000 call centre representatives.
-        </div>
-        <div class="text">
-          I'm into any software project that <span class="light-text">requires 
-          creativity and design</span>. After trying out many different 
-          Full-Stack experiences--and recalling fond memories
-          of editing Neopets themes--I have found my happy resting place 
-          in Front-End. 
-        </div>
-        <div class="text">
-          In my spare time I love <span class="light-text">concerts, travel, and video games</span>.
-        </div>
-        
+      <div class="description" [innerHTML]="description">
       </div>
       
       <div class="technologies">
         <div class="technologies-description">Here are some technologies that I have worked with:</div>
         <ul class="list">
-          <li class="tech-item about-hidden">
+          <li class="tech-item about-hidden animation-shake" *ngFor="let technology of technologies">
             <i class="uil uil-angle-double-right icon"></i>
-            Angular Js / 2+
-          </li>
-          <li class="tech-item about-hidden">
-            <i class="uil uil-angle-double-right icon"></i>
-            HTML and CSS
-          </li>
-          <li class="tech-item about-hidden">
-            <i class="uil uil-angle-double-right icon"></i>
-            Java
-          </li>
-          <li class="tech-item about-hidden">
-            <i class="uil uil-angle-double-right icon"></i>
-            Javascript ES6+
+            {{ technology }}
           </li>
         </ul>
       </div>

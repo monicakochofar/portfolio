@@ -11,6 +11,31 @@ export class UserDataService {
     return 'mokdev123@gmail.com';
   }
 
+  getAboutTechnologies() {
+    return ['Angular Js / 2+', 'HTML and CSS', 'Java', 'Javascript ES6+'];
+  }
+
+  getAboutDesc() {
+    return `
+    <p>
+      I am currently working at <b>Rogers Communications</b> as a 
+      full time Front-End Developer, with a focus on 
+      <b>Angular</b> in particular. 
+      My work projects surround a high-impact web application, 
+      which is used regularly by over 7000 call centre representatives.
+    </p>
+    <p>
+      I'm into any software project that <b>requires 
+      creativity and design</b>. After trying out many different 
+      Full-Stack experiences--and recalling fond memories
+      of editing Neopets themes--I have found my happy resting place 
+      in Front-End. 
+    </p>
+    <p>
+      In my spare time I love <b>concerts, travel, and video games</b>.
+    </p>`;
+  }
+
   getWorkExperience() {
     return [
       { 

@@ -44,6 +44,7 @@ header {
   }
 
   .logo {
+    font-size: unset;
     &:hover {
       color: var(--first-color);
     }
@@ -66,13 +67,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: var(--small-font-size);
-    color: var(--title-color);
-    font-weight: var(--font-medium);
-    &:hover {
-      color: var(--first-color);
-      transition: color .3s;
-    }
     &.active-link {
       color: var(--first-color);
     }
