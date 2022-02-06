@@ -25,20 +25,6 @@ export class ScrollListenersService {
 
   // ABOUT page ---
 
-  //TODO: complete interaction observer
-  aboutPageAnimation(){
-    const options = {
-      root: null, // viewport of the page
-      rootMargin: '0px', // margin around root
-      threshold: 1.0 // 100 percent visibility, .5 for 50%
-    }
-    
-    // let observer = new IntersectionObserver(callback, options);
-
-    // let target = document.querySelector('#listItem');
-    // observer.observe(target);
-  }
-
   aboutAnimScroll(isAboutPage: boolean) {
     if (isAboutPage && this.timesRanMap.about === 0) {
       this.delayedAnimationAbout();
