@@ -1,6 +1,5 @@
 import { Renderer2 } from '@angular/core';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { NavBarDataService } from '../navbar-data.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -16,8 +15,7 @@ export class HeaderComponent {
     this.navLinks = value;
   }
   
-  constructor(private navBar: NavBarDataService,
-    private renderer: Renderer2) {
+  constructor(private renderer: Renderer2) {
   }
 
   clickedNavLink(navLink: any) {

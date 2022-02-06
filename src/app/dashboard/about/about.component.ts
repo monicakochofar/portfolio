@@ -1,4 +1,3 @@
-import { NavBarDataService } from './../../navbar-data.service';
 import { UserDataService } from './../user-data.service';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
@@ -14,11 +13,6 @@ export class AboutComponent {
   technologies = this.userData.getAboutTechnologies();
   description = this.userData.getAboutDesc();
 
-  constructor(private userData: UserDataService, 
-    private navBar: NavBarDataService) {}
-
-  // pageShown() {
-  //   this.navBar.setNavLinkHighlight("About");
-  // }
+  constructor(private userData: UserDataService) {}
 
 }

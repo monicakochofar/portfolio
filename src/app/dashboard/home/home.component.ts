@@ -1,4 +1,3 @@
-import { NavBarDataService } from './../../navbar-data.service';
 import { UserDataService } from './../user-data.service';
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import Typewriter from 'typewriter-effect/dist/core';
@@ -17,8 +16,7 @@ export class HomeComponent implements OnInit{
     gitHub: this.userData.GITHUB_URL
   };
   
-  constructor(private userData: UserDataService,
-    private navBar: NavBarDataService) {}
+  constructor(private userData: UserDataService) {}
 
   ngOnInit() {
     const typeWriter = new Typewriter(document.getElementById('title'));
@@ -48,7 +46,4 @@ export class HomeComponent implements OnInit{
     window.location.href = `mailto:${this.userData.getContactMail()}`;
   }
 
-  // pageShown() {
-  //   this.navBar.setNavLinkHighlight("Home");
-  // }
 }
