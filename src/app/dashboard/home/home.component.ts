@@ -1,3 +1,4 @@
+import { NavBarDataService } from './../../navbar-data.service';
 import { UserDataService } from './../user-data.service';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
@@ -16,7 +17,8 @@ export class HomeComponent {
     gitHub: this.userData.GITHUB_URL
   };
   
-  constructor(private userData: UserDataService) {}
+  constructor(private userData: UserDataService,
+    private navBar: NavBarDataService) {}
 
   scrollDown() {
     if (this.homeElement) {
@@ -40,4 +42,8 @@ export class HomeComponent {
   contactMeClicked() {
     window.location.href = `mailto:${this.userData.getContactMail()}`;
   }
+
+  // pageShown() {
+  //   this.navBar.setNavLinkHighlight("Home");
+  // }
 }

@@ -1,21 +1,21 @@
+import { NavBarDataService } from './navbar-data.service';
 import { ScrollListenersService } from './scroll-listeners.service';
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   template: `
     <app-header 
-      [navigationLinks]="navLinks"
-      (clickedLink)="clickedNavLink($event)">
+      [navigationLinks]="navBar.navLinks">
     </app-header>
     <main (scrollDownEvent)="clickedScrollDown($event)">
       <router-outlet></router-outlet>
     </main>
-    <app-footer [navigationLinks]="navLinks"></app-footer>
+    <app-footer [navigationLinks]="navBar.navLinks"></app-footer>
 
     <a class="scrollup"
       aria-label="Scroll to top"
       id="scroll-up"
-      (click)="scrollUpClicked()"
       href="#home">
       <i class="uil uil-arrow-up icon"></i>
     </a>
@@ -52,23 +52,6 @@ export class AppComponent {
 
   title = 'portfolio';
 
-  navLinks = [
-    {link: '#home', text: 'Home', icon: 'home', isActive: true},
-    {link: '#about', text: 'About', icon: 'user', isActive: false},
-    {link: '#portfolio', text: 'Portfolio', icon: 'scenery', isActive: false},
-    {link: '#experience', text: 'Experience', icon: 'briefcase-alt', isActive: false}
-    // {link: '#contact', text: 'Contact', icon: 'message', isActive: false}
-  ];
-
-  // navLinks = [
-  //   {link: '#home', text: 'Home', icon: 'home', isActive: true},
-  //   {link: '#services', text: 'Services', icon: 'briefcase-alt', isActive: false},
-  //   {link: '#about', text: 'About', icon: 'user', isActive: false},
-  //   {link: '#skills', text: 'Skills', icon: 'file-alt', isActive: false},
-  //   {link: '#portfolio', text: 'Portfolio', icon: 'scenery', isActive: false},
-  //   {link: '#contact', text: 'Contact', icon: 'message', isActive: false}
-  // ];
-
   @HostListener('window:scroll', ['$event'])
   scrollListener() {
     const scrollY = window.scrollY;
@@ -89,7 +72,9 @@ export class AppComponent {
     
   }
 
-  constructor(private scrollService: ScrollListenersService) {}
+  constructor(private scrollService: ScrollListenersService,
+    public navBar: NavBarDataService,
+    private router: Router) {}
 
   isPage(windowHeight: any, elementVisible:any, elementID:string) {
     const workElement = document.getElementById(elementID);
@@ -97,26 +82,8 @@ export class AppComponent {
     return elementTop && (elementTop < windowHeight - elementVisible);
   }
 
-  clickedNavLink(navLink: any) {
-    this.setCurrentlyActiveLinkFalse();
-    navLink.isActive = true;
-  }
-
-  setCurrentlyActiveLinkFalse() {
-    const currentlyActiveLink = this.navLinks.find(el => el.isActive === true);
-    currentlyActiveLink && (currentlyActiveLink.isActive = false);
-  }
-
-  scrollUpClicked() {
-    window.location.hash = '';
-    this.setCurrentlyActiveLinkFalse();
-    this.navLinks[0].isActive = true;
-  }
-
   clickedScrollDown(event: any) {
-    this.setCurrentlyActiveLinkFalse();
-    const aboutLink = this.navLinks.find(el => el.text === 'About');
-    aboutLink && (aboutLink.isActive = true);
+    location.href = "#about";
   }
 
 }

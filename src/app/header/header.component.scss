@@ -67,9 +67,9 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    &.active-link {
-      color: var(--first-color);
-    }
+    // &.active-link {
+    //   color: var(--first-color);
+    // }
   }
   
   .icon {

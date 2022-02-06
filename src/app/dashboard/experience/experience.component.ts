@@ -1,3 +1,4 @@
+import { NavBarDataService } from './../../navbar-data.service';
 import { UserDataService } from '../user-data.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -14,6 +15,11 @@ export class ExperienceComponent {
 
   currentTab = 'work';
 
-  constructor(private userData: UserDataService) {}
+  constructor(private userData: UserDataService,
+    private navBar: NavBarDataService) {}
+
+  // pageShown() {
+  //   this.navBar.setNavLinkHighlight("Experience");
+  // }
 
 }

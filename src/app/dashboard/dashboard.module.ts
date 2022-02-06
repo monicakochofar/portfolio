@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioModalComponent } from './portfolio/portfolio-modal/portfolio-modal.component';
 import { UserDataService } from './user-data.service';
+import { FadeInDirective } from './intersection.directive';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
     ExperienceComponent,
     TimelineComponent,
     PortfolioComponent,
-    PortfolioModalComponent
+    PortfolioModalComponent,
+    FadeInDirective
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ const routes: Routes = [
     ExperienceComponent,
     TimelineComponent,
     PortfolioComponent,
-    PortfolioModalComponent
+    PortfolioModalComponent,
+    FadeInDirective
   ],
   entryComponents: [
     HomeComponent,
@@ -47,7 +50,8 @@ const routes: Routes = [
     ExperienceComponent,
     TimelineComponent,
     PortfolioComponent,
-    PortfolioModalComponent
+    PortfolioModalComponent,
+    FadeInDirective
   ]
 })
 export class DashboardModule { }

@@ -1,53 +1,58 @@
-import { AfterViewInit, Directive, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { Subject,  } from 'rxjs/internal/Subject';
+import { Directive, ElementRef, Renderer2, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Directive({
-  selector: '[observeVisibility]',
+  selector: '[fadeIn]',
 })
-export class ObserveVisibilityDirective implements OnInit {
-  //@Input() debounceTime = 0; //TODO: add debounce time
-  @Input() threshold = 1;
-  //@Input() elementId: string
+export class FadeInDirective implements OnInit {
 
-  @Output() visible = new EventEmitter<HTMLElement>();
+  @Input() thresholdMax = .8;
+  @Input() thresholdMin = .5;
+  @Output() isVisible = new EventEmitter <string>();
 
-  //private observer: IntersectionObserver | undefined;
-  private subject$ = new Subject<{
-    entry: IntersectionObserverEntry;
-    observer: IntersectionObserver;
-  }>();
+  constructor(
+      private element: ElementRef,
+      private renderer: Renderer2
+    ) {}
 
-  constructor(private element: ElementRef) {}
+    //TODO: implement debouncing
 
   ngOnInit() {
+    this.createObserver();
 
+  }
+
+  addClassName(className) {
+    this.renderer.addClass(this.element.nativeElement, className);
+    this.isVisible.emit();
+  }
+
+  removeClassName(className) {
+    if (this.element.nativeElement.classList.contains(className)) {
+      this.renderer.removeClass(this.element.nativeElement, className);
+    }
   }
 
   createObserver() {
     let options = {
-      root: document.querySelector('#scrollArea'), // element used as the viewport
-      rootMargin: '0px', // margin around root
-      threshold: this.threshold // 100% of the target is visible before invoking callback
+      //root: document.querySelector('#dashboard'), // element used as the viewport
+      rootMargin: '-20px', // margin around root
+      threshold: [this.thresholdMin, this.thresholdMax] // 100% of the target is visible before invoking callback
     }
 
-    let callback = (entries, observer) => {
-      entries.forEach(entry => {
-        // Each entry describes an intersection change for one observed
-        // target element:
-        //   entry.boundingClientRect
-        //   entry.intersectionRatio
-        //   entry.intersectionRect
-        //   entry.isIntersecting
-        //   entry.rootBounds
-        //   entry.target
-        //   entry.time
+    const callback = (entries) => {
+      entries && entries.forEach(entry => {
+        // console.log('entry ', entry.isIntersecting);
+        if (entry.isIntersecting) {
+          this.addClassName('visible');
+        } else {
+          this.removeClassName('visible');
+        }
       });
     };
     
-    let observer = new IntersectionObserver(callback, options);
-
-    let target = document.getElementById('#about');
-    //let target = document.querySelector('.section');
+    const observer = new IntersectionObserver(callback, options);
+    const target = this.element.nativeElement;
     target && observer.observe(target);
   }
 
