@@ -1,13 +1,13 @@
 import { NavBarDataService } from './../../navbar-data.service';
 import { UserDataService } from './../user-data.service';
-import { Component, ViewChild, ElementRef } from '@angular/core';
-
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import Typewriter from 'typewriter-effect/dist/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
   @ViewChild('homeElement', {static: false}) 
   homeElement: ElementRef | undefined;
@@ -19,6 +19,11 @@ export class HomeComponent {
   
   constructor(private userData: UserDataService,
     private navBar: NavBarDataService) {}
+
+  ngOnInit() {
+    const typeWriter = new Typewriter(document.getElementById('title'));
+    typeWriter.typeString("Hi, I'm Monica").start();
+  }
 
   scrollDown() {
     if (this.homeElement) {

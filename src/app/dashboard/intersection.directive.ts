@@ -19,7 +19,6 @@ export class FadeInDirective implements OnInit {
 
   ngOnInit() {
     this.createObserver();
-
   }
 
   addClassName(className) {

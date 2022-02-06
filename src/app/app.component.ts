@@ -69,7 +69,6 @@ export class AppComponent {
 
     const isExperiencePage = this.isPage(windowHeight, elementVisible, 'work');
     this.scrollService.experienceScroll(!!isExperiencePage);
-    
   }
 
   constructor(private scrollService: ScrollListenersService,
