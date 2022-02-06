@@ -85,3 +85,11 @@
   }
 
 }
+
+@media screen and (max-width: 380px) {
+  footer {
+    &.footer {
+      padding: 12rem 1rem 0;
+    }
+  }
+}
