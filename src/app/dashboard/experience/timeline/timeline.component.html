@@ -10,13 +10,23 @@
     </ng-container>
   
     <div class="details">
+
+      <!-- <div class="original"> -->
       <h3 class="title" [innerHTML]="item.title"></h3>
       <span class="subtitle">{{ item.location }}</span>
       <div class="calendar">
         <i class="uil uil-calendar-alt"></i>
         {{ item.years }}
       </div>
-    </div>
+      <!-- </div> -->
+
+      <!-- <div class="details-more">
+        <ul class="title">
+          <li>test123 test12 test12312312313213</li>
+        </ul>
+      </div>  -->
+
+    </div> 
   
     <div class="linecircle" *ngIf="isOdd(i)">
       <span class="rounder"></span>

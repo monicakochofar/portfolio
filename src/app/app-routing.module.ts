@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: '**', component: ErrorComponent}
 ]
 
+//TODO: check routing
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
   scrollPositionRestoration: 'top',

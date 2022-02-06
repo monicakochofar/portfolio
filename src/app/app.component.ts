@@ -1,6 +1,6 @@
 import { NavBarDataService } from './navbar-data.service';
 import { ScrollListenersService } from './scroll-listeners.service';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
@@ -48,7 +48,7 @@ import { Router } from '@angular/router';
     `
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   title = 'portfolio';
 
@@ -74,6 +74,10 @@ export class AppComponent {
   constructor(private scrollService: ScrollListenersService,
     public navBar: NavBarDataService,
     private router: Router) {}
+
+  ngOnInit() {
+    
+  }
 
   isPage(windowHeight: any, elementVisible:any, elementID:string) {
     const workElement = document.getElementById(elementID);

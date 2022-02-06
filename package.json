@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~12.1.0-",
     "@angular/platform-browser-dynamic": "~12.1.0-",
     "@angular/router": "~12.1.0-",
+    "@angular/service-worker": "~12.1.0-",
     "kill-port": "^1.6.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.1",
