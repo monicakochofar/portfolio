@@ -1,17 +1,17 @@
 <header class="header-nav" id="header">
   <nav class="nav container scroll-header">
-    <a href="#" class="logo">Monica</a>
+    <a href="#" class="logo link">Monica</a>
     <div class="menu" [ngClass]="{'show-menu': showMenu}">
       <ul class="list grid">
   
         <li class="item" *ngFor="let navLink of navLinks">
           <a class="link"
-            attr.aria-label="{{ navLink.text }}"
+            attr.aria-label="{{ navLink.label }}"
             [ngClass]="{'active-link': navLink.isActive}"
             href="{{navLink.link}}"
             (click)="clickedNavLink(navLink)">
             <i class="uil icon" [ngClass]="'uil-' + navLink.icon"></i> 
-            {{navLink.text}}
+            {{navLink.label}}
           </a>
         </li>
         <li>

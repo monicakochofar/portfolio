@@ -1,4 +1,5 @@
 import { ScrollListenersService } from './scroll-listeners.service';
+import { NavBarDataService } from './navbar-data.service';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +24,7 @@ import { ErrorComponent } from './error/error.component';
     AppRoutingModule,
     DashboardModule
   ],
-  providers: [ScrollListenersService],
+  providers: [ScrollListenersService, NavBarDataService],
   exports: [
     HeaderComponent,
     FooterComponent,

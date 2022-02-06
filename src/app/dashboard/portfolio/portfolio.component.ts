@@ -1,3 +1,5 @@
+import { NavBarDataService } from './../../navbar-data.service';
+import { UserDataService } from './../user-data.service';
 import { Component} from '@angular/core';
 
 @Component({
@@ -7,47 +9,18 @@ import { Component} from '@angular/core';
 })
 export class PortfolioComponent {
 
-  itemList = [
-    { 
-      isActive: false,
-      icon: 'uil-web-grid',
-      title1: 'Ui/Ux',
-      title2: 'Designer',
-      portfolio: [
-        'I develop the user interface.',
-        'Web page development.',
-        'I create ux element interactions.',
-        'I position your company brand.'
-    ]},
-    { 
-      isActive: false,
-      icon: 'uil-arrow',
-      title1: 'Front-End',
-      title2: 'Developer',
-      portfolio: [
-        'I develop the user interface.',
-        'Web page development.',
-        'I create ux element interactions.',
-        'I position your company brand.'
-    ]},
-    { 
-      isActive: false,
-      icon: 'uil-pen',
-      title1: 'Branding',
-      title2: 'Designer',
-      portfolio: [
-        'I develop the user interface.',
-        'Web page development.',
-        'I create ux element interactions.',
-        'I position your company brand.'
-    ]}
-  ];
+  itemList = this.userData.getPortfolioList();
   
-  constructor() {}
+  constructor(private userData: UserDataService,
+    private navBar: NavBarDataService) {}
 
   closeModal(event:any) {
     const item = this.itemList.find(el => el.title1 === event.title1);
     item && (item.isActive = false);
   }
+
+  // pageShown() {
+  //   this.navBar.setNavLinkHighlight("Portfolio");
+  // }
 
 }

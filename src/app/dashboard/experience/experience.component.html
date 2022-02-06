@@ -1,0 +1,24 @@
+<section class="experience section" 
+  id="experience" 
+  fadeIn 
+  [thresholdMax]=".4"
+  [thresholdMin]=".2">
+  <h2 class="section-title">Experience</h2>
+  <span class="section-subtitle">My personal journey</span>
+
+  <!-- LINKS -->
+  <div class="experience-container container">
+    <div class="sections">
+      <!-- WORK-->
+      <ng-container *ngIf="workItemList">
+        <div class="content" 
+          [ngClass]="{'active': currentTab === 'work'}"
+          data-content id="work">
+          <app-timeline [itemList]="workItemList"></app-timeline>
+        </div>
+      </ng-container>
+
+    </div>
+
+  </div>
+</section>

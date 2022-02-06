@@ -1,4 +1,4 @@
-<section class="portfolio section" id="portfolio">
+<section class="portfolio section" id="portfolio" fadeIn>
   <h2 class="section-title">Portfolio</h2>
   <span class="section-subtitle">Software creations</span>
 
@@ -15,8 +15,8 @@
           <h3 class="title">
             {{ item.title1 }} <br> {{ item.title2 }}
           </h3>
-          <span> an application created for xyz </span>
-          <div class="languages">Javascript</div>
+          <span> {{ item.description }} </span>
+          <div class="languages">{{ item.languages }}</div>
         </div>
   
         <!-- <span class="button button-flex button-small button-link portfolio-button">

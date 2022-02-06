@@ -17,7 +17,7 @@
         transform: scale(1.5);
       }
     }
-    &.portfolio-hidden {
+    &.portfolio-hidden { //TODO: take care of this
       opacity: 0;
       transition: 1s;
     }

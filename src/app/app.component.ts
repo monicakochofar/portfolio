@@ -1,30 +1,56 @@
+import { NavBarDataService } from './navbar-data.service';
 import { ScrollListenersService } from './scroll-listeners.service';
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <app-header 
+      [navigationLinks]="navBar.navLinks">
+    </app-header>
+    <main (scrollDownEvent)="clickedScrollDown($event)">
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer [navigationLinks]="navBar.navLinks"></app-footer>
+
+    <a class="scrollup"
+      aria-label="Scroll to top"
+      id="scroll-up"
+      href="#home">
+      <i class="uil uil-arrow-up icon"></i>
+    </a>
+  `,
+  styles: [
+    `
+      .scrollup {
+        position: fixed;
+        right: 1rem;
+        bottom: -20%;
+        background-color: var(--first-color-alt);
+        opacity: .8;
+        padding: 0.3rem 0.3rem 0 0.3rem;
+        border-radius: .4rem;
+        z-index: var(--z-tooltip);
+        transition: .4s;
+      }
+      .icon {
+        font-size: 1.5rem;
+        color: #FFF;
+      }
+
+      .scrollup:hover {
+        background-color: var(--first-color-lighter);
+      }
+      
+      .show-scroll {
+        bottom: 5rem;
+      }
+    `
+  ],
 })
 export class AppComponent {
 
   title = 'portfolio';
-
-  navLinks = [
-    {link: '#home', text: 'Home', icon: 'home', isActive: true},
-    {link: '#about', text: 'About', icon: 'user', isActive: false},
-    {link: '#portfolio', text: 'Portfolio', icon: 'scenery', isActive: false},
-    {link: '#experience', text: 'Experience', icon: 'briefcase-alt', isActive: false}
-    // {link: '#contact', text: 'Contact', icon: 'message', isActive: false}
-  ];
-
-  // navLinks = [
-  //   {link: '#home', text: 'Home', icon: 'home', isActive: true},
-  //   {link: '#services', text: 'Services', icon: 'briefcase-alt', isActive: false},
-  //   {link: '#about', text: 'About', icon: 'user', isActive: false},
-  //   {link: '#skills', text: 'Skills', icon: 'file-alt', isActive: false},
-  //   {link: '#portfolio', text: 'Portfolio', icon: 'scenery', isActive: false},
-  //   {link: '#contact', text: 'Contact', icon: 'message', isActive: false}
-  // ];
 
   @HostListener('window:scroll', ['$event'])
   scrollListener() {
@@ -46,35 +72,18 @@ export class AppComponent {
     
   }
 
-  constructor(private scrollService: ScrollListenersService) {}
+  constructor(private scrollService: ScrollListenersService,
+    public navBar: NavBarDataService,
+    private router: Router) {}
 
   isPage(windowHeight: any, elementVisible:any, elementID:string) {
     const workElement = document.getElementById(elementID);
     const elementTop = workElement?.getBoundingClientRect().top;
-    console.log('elementTop', elementTop, windowHeight, elementVisible, workElement)
     return elementTop && (elementTop < windowHeight - elementVisible);
   }
 
-  clickedNavLink(navLink: any) {
-    this.setCurrentlyActiveLinkFalse();
-    navLink.isActive = true;
-  }
-
-  setCurrentlyActiveLinkFalse() {
-    const currentlyActiveLink = this.navLinks.find(el => el.isActive === true);
-    currentlyActiveLink && (currentlyActiveLink.isActive = false);
-  }
-
-  scrollUpClicked() {
-    window.location.hash = '';
-    this.setCurrentlyActiveLinkFalse();
-    this.navLinks[0].isActive = true;
-  }
-
   clickedScrollDown(event: any) {
-    this.setCurrentlyActiveLinkFalse();
-    const aboutLink = this.navLinks.find(el => el.text === 'About');
-    aboutLink && (aboutLink.isActive = true);
+    location.href = "#about";
   }
 
 }

@@ -1,4 +1,6 @@
+import { Renderer2 } from '@angular/core';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { NavBarDataService } from '../navbar-data.service';
 
 @Component({
   selector: 'app-header',
@@ -13,15 +15,13 @@ export class HeaderComponent {
   @Input('navigationLinks') set navigationLinks(value: any) {
     this.navLinks = value;
   }
-
-  @Output() clickedLink = new EventEmitter<string>();
   
-  constructor() {
+  constructor(private navBar: NavBarDataService,
+    private renderer: Renderer2) {
   }
 
   clickedNavLink(navLink: any) {
     this.showMenu = false;
-    this.clickedLink.emit(navLink);
   }
 
   ngAfterViewInit() {
@@ -54,15 +54,24 @@ export class HeaderComponent {
   }
 
   clickedContactMe() {
+    const SHAKE_CLASS = "shake";
+    this.showMenu = false;
     const contactMeElement = document.getElementById("contact-me");
-    if (contactMeElement) {
-      if (contactMeElement.classList.contains('shake')) {
-        contactMeElement.classList.remove("shake");
-      }
-      setTimeout(() => {
-        contactMeElement.classList.add("shake");
-      }, 400);
+    this.removeClassName(contactMeElement, SHAKE_CLASS);
+
+    setTimeout(() => {
+      this.addClassName(contactMeElement, SHAKE_CLASS)
+    }, 400);
+  }
+
+  removeClassName(element, className) {
+    if (element.classList.contains(className)) {
+      this.renderer.removeClass(element, className);
     }
+  }
+
+  addClassName(element, className) {
+    this.renderer.addClass(element, className);
   }
 
 }

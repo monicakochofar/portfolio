@@ -1,6 +1,5 @@
-import { SkillsComponent } from './skills/skills.component';
-import { TimelineComponent } from './qualification/timeline/timeline.component';
-import { ExperienceComponent } from './qualification/experience.component';
+import { TimelineComponent } from './experience/timeline/timeline.component';
+import { ExperienceComponent } from './experience/experience.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
@@ -9,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioModalComponent } from './portfolio/portfolio-modal/portfolio-modal.component';
+import { UserDataService } from './user-data.service';
+import { FadeInDirective } from './intersection.directive';
 
 const routes: Routes = [
   {
@@ -23,24 +24,24 @@ const routes: Routes = [
     DashboardComponent,
     ExperienceComponent,
     TimelineComponent,
-    SkillsComponent,
     PortfolioComponent,
-    PortfolioModalComponent
+    PortfolioModalComponent,
+    FadeInDirective
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  providers: [],
+  providers: [UserDataService],
   exports: [
     HomeComponent,
     AboutComponent,
     DashboardComponent,
     ExperienceComponent,
     TimelineComponent,
-    SkillsComponent,
     PortfolioComponent,
-    PortfolioModalComponent
+    PortfolioModalComponent,
+    FadeInDirective
   ],
   entryComponents: [
     HomeComponent,
@@ -48,9 +49,9 @@ const routes: Routes = [
     DashboardComponent,
     ExperienceComponent,
     TimelineComponent,
-    SkillsComponent,
     PortfolioComponent,
-    PortfolioModalComponent
+    PortfolioModalComponent,
+    FadeInDirective
   ]
 })
 export class DashboardModule { }

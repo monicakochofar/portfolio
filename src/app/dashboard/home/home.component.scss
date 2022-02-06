@@ -15,8 +15,6 @@
       font-size: 1.25rem;
       color: var(--first-color);
       &:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
         color: var(--first-color-alt);
       }
     }
@@ -98,7 +96,7 @@
 
 /* For large devices */
 @media screen and (min-width: 768px) {
-  .home-container { //TODO: move all home data to the home component
+  .home-container {
     row-gap: 5rem;
     .home-content {
       padding-top: 5.5rem;

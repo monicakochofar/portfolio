@@ -131,10 +131,24 @@ img {
   height: auto;
 }
 
-/*==================== REUSABLE CSS CLASSES ====================*/
+b {
+  color: var(--first-color-alt);
+}
+
+/*==================== REUSABLE CSS CLASSES FOR SECTIONS ====================*/
 
 .section {
   padding: 2rem 0 4rem;
+  opacity: 0;
+  //transform: translateY(10vh);
+  visibility: hidden;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  will-change: opacity, visibility;
+  &.visible {
+    opacity: 1;
+    //transform: none;
+    visibility: visible;
+  }
 }
 
 .section-title {
@@ -205,25 +219,24 @@ img {
   }
 }
 
-/*==================== EFFECTS ====================*/
+/*==================== LINKS ====================*/
 
-.anim-underline {
-  display: inline-block;
-  &::after {
-    content: '';
-    width: 0px;
-    height: 1px;
-    display: block;
-    background: var(--first-color);
-    transition: 300ms;
+.link {
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  &:hover {
+    color: var(--first-color);
+    transition: color .5s;
   }
-  &:hover::after {
-    width: 100%;
-  }
-  &.active {
-    &::after {
-      width: 100%;
-    }
+}
+
+/*==================== ANIMATION EFFECTS ====================*/
+
+.animation-shake {
+  &:hover{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
   }
 }
 
