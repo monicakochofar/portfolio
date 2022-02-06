@@ -29,6 +29,33 @@
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
   }
+
+  .details {
+    position: relative;
+    .original {
+      opacity: 1;
+      transition: .4s;
+    }
+    .details-more {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: .7s;
+      opacity: 0;
+    }
+    &:hover {
+      //cursor: pointer;
+      .original {
+        visibility: none;
+        opacity: 0;
+      }
+      .details-more {
+        opacity: 1;
+        display: unset;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {

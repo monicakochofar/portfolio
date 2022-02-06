@@ -10,8 +10,8 @@ const routes: Routes = [
     loadChildren:() => 
       import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
-  {path: '**', component: ErrorComponent}
-]
+  { path: '**', component: ErrorComponent }
+];
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',

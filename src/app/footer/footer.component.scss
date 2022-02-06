@@ -5,6 +5,13 @@
     display: flex;
     justify-content: center;
     font-size: var(--h1-font-size);
+    opacity: 0;
+    transform: translate(0, 5rem);
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+    &.visible {
+      opacity: 1;
+      transform: none;
+    }
   }
   .bg {
     // background-color: var(--first-color-second);
