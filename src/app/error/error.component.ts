@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
       <span class="section-subtitle">
         <strong>Error:</strong> 
         Sorry, we're still trying to compute how you landed on this page.
-        <br>Try executing the back button or clicking "Home".
+        <br>Try executing the back button or clicking "Monica".
       </span>
 
       <div class="error-container container">
@@ -33,17 +33,8 @@ import { Component, OnInit } from '@angular/core';
     `
   ],
 })
-export class ErrorComponent implements OnInit{
+export class ErrorComponent {
 
   constructor() {}
-
-  ngOnInit() {
-    const activeLinkElements = document.getElementsByClassName('active-link');
-    const length = activeLinkElements.length;
-    for (let i=0; i<length; i++) {
-      const element = activeLinkElements[i];
-      element.classList.remove('active-link');
-    }
-  }
 
 }

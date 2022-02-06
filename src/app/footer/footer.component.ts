@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-footer',
   template: `
   <footer class="footer">
-    <div class="fin">
+    <div class="fin" id="fin">
       <span>Fin.</span>
     </div>
     <div class="bg">
