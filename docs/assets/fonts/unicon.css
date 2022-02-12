@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'unicon';
+  src:  url('unicon.eot?pwcvyv');
+  src:  url('unicon.eot?pwcvyv#iefix') format('embedded-opentype'),
+    url('unicon.ttf?pwcvyv') format('truetype'),
+    url('unicon.woff?pwcvyv') format('woff'),
+    url('unicon.svg?pwcvyv#unicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="uil-"], [class*=" uil-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'unicon' !important;
+  /* speak: never; */
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.uil-arrow-down:before {
+  content: "\e91b";
+  
+}
+.uil-external-link-alt:before {
+  content: "\e91a";
+  
+}
+.uil-github-alt:before {
+  content: "\e915";
+  
+}
+.uil-home:before {
+  content: "\e916";
+  
+}
+.uil-linkedin-alt:before {
+  content: "\e917";
+  
+}
+.uil-scenery:before {
+  content: "\e918";
+  
+}
+.uil-user:before {
+  content: "\e919";
+  
+}
+.uil-angle-double-right:before {
+  content: "\e900";
+  
+}
+.uil-angle-down:before {
+  content: "\e901";
+  
+}
+.uil-apps:before {
+  content: "\e902";
+  
+}
+.uil-arrow-left:before {
+  content: "\e903";
+  
+}
+.uil-arrow-right:before {
+  content: "\e904";
+  
+}
+.uil-arrow-up:before {
+  content: "\e905";
+  
+}
+.uil-brackets-curly:before {
+  content: "\e906";
+  
+}
+.uil-briefcase-alt:before {
+  content: "\e907";
+  
+}
+.uil-calendar-alt:before {
+  content: "\e908";
+  
+}
+.uil-check-circle:before {
+  content: "\e909";
+  
+}
+.uil-folder:before {
+  content: "\e90a";
+  
+}
+.uil-github:before {
+  content: "\e90b";
+  
+}
+.uil-graduation-cap:before {
+  content: "\e90c";
+  
+}
+.uil-linkedin:before {
+  content: "\e90d";
+  
+}
+.uil-message:before {
+  content: "\e90e";
+  
+}
+.uil-moon:before {
+  content: "\e90f";
+  
+}
+.uil-mouse-alt:before {
+  content: "\e910";
+  
+}
+.uil-pen:before {
+  content: "\e911";
+  
+}
+.uil-sun:before {
+  content: "\e912";
+  
+}
+.uil-times:before {
+  content: "\e913";
+  
+}
+.uil-web-grid:before {
+  content: "\e914";
+  
+}
