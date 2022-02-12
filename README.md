@@ -20,3 +20,16 @@ npm start
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
+## Features
+- light theme (default) / dark theme
+- highly responsive web design (ie. works on all devices)
+- automatic scroll up button
+- fade-in/fade-out on scroll
+- fun little "shake" animations
+- cute robo dude
+
+lighthouse results:
+- 100% accessibility
+- 100% best practices
+- 100% SEO
+
