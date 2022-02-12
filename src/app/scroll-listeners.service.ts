@@ -13,14 +13,24 @@ export class ScrollListenersService {
     exp: 0
   };
 
-  // SSCROLL UP BUTTON ---
-  scrollUp(scrollY: any) {
+  // SCROLL UP BUTTON ---
+  scrollUpButton(scrollY: any) {
     const scrollUpElement = document.getElementById('scroll-up');
     if (scrollY >= 560 && scrollUpElement) {
       scrollUpElement.classList.add('show-scroll');
     } else if (scrollUpElement && scrollUpElement.classList.contains('show-scroll')){
       scrollUpElement.classList.remove('show-scroll');
     }
+  }
+
+  // ROBO BUDDY ---
+  roboBuddy(scrollY: any) {
+    // const scrollUpElement = document.getElementById('scroll-up');
+    // if (scrollY >= 560 && scrollUpElement) {
+    //   scrollUpElement.classList.add('show-scroll');
+    // } else if (scrollUpElement && scrollUpElement.classList.contains('show-scroll')){
+    //   scrollUpElement.classList.remove('show-scroll');
+    // }
   }
 
   // ABOUT page ---

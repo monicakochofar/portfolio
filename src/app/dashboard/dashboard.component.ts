@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   <div id="dashboard">
     <app-home></app-home>
     <app-about></app-about>
-    <app-portfolio></app-portfolio>
+    <app-portfolio *ngIf="showPortfolio"></app-portfolio>
     <app-experience [showTabs]="false"></app-experience>
   </div>
   `
@@ -15,5 +15,7 @@ import { Component } from '@angular/core';
 export class DashboardComponent {
 
   constructor() {}
+
+  showPortfolio = false; //tbd
 
 }

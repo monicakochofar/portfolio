@@ -11,7 +11,7 @@ export class NavBarDataService {
   navLinks = [
     {link: '#home', label: 'Home', icon: 'home', isActive: true},
     {link: '#about', label: 'About', icon: 'user', isActive: false},
-    {link: '#portfolio', label: 'Portfolio', icon: 'scenery', isActive: false},
+    // {link: '#portfolio', label: 'Portfolio', icon: 'scenery', isActive: false},
     {link: '#experience', label: 'Experience', icon: 'briefcase-alt', isActive: false}
     // {link: '#contact', label: 'Contact', icon: 'message', isActive: false}
   ];

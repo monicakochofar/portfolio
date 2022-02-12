@@ -35,13 +35,12 @@ export class FadeInDirective implements OnInit {
   createObserver() {
     let options = {
       //root: document.querySelector('#dashboard'), // element used as the viewport
-      rootMargin: '-20px', // margin around root
+      rootMargin: '0px', // margin around root
       threshold: [this.thresholdMin, this.thresholdMax] // 100% of the target is visible before invoking callback
     }
 
     const callback = (entries) => {
       entries && entries.forEach(entry => {
-        // console.log('entry ', entry.isIntersecting);
         if (entry.isIntersecting) {
           this.addClassName('visible');
         } else {

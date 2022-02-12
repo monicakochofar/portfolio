@@ -57,7 +57,8 @@ export class AppComponent implements OnInit {
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
     const elementVisible = 20;
-    this.scrollService.scrollUp(scrollY);
+    this.scrollService.scrollUpButton(scrollY);
+    //this.scrollService.roboBuddy(scrollY);
 
     const isAboutPage = this.isPage(windowHeight, elementVisible, 'about');
     this.scrollService.aboutAnimScroll(!!isAboutPage);
