@@ -11,7 +11,7 @@
     "explore": "source-map-explorer dist/**/*.js",
     "lint": "eslint . --ext .ts",
     "prepare": "husky install",
-    "githubpages" : "ng build --output-path docs --base-href portfolio"
+    "githubpages" : "ng build --output-path docs --base-href /portfolio/"
   },
   "private": true,
   "dependencies": {
