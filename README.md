@@ -17,6 +17,7 @@ Here is my first iteration of my portfolio website. Hope you enjoy!
 npm i && npm run build
 npm start
 ```
+open browser in http://localhost:4200/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
